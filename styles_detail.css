@@ -1,0 +1,219 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px 40px;
+    color: white;
+    height: 80px;
+}
+
+.header .logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #ffd700;
+}
+
+
+/* Detail Container */
+.detail-container {
+    display: flex;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.image-detail {
+    flex: 1;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.image-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.info-detail {
+    flex: 2;
+}
+
+.info-detail h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.quantity {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.order-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+
+/* Styling untuk tampilan review gallery */
+.review-gallery {
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.review-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsif */
+    gap: 20px;
+    justify-items: center; /* Menyusun gambar di tengah */
+}
+
+.review-item {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk efek kedalaman */
+    overflow: hidden; /* Agar gambar dan teks tidak keluar dari batas */
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+}
+
+.order-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+    padding: 12px 20px;
+    background-color: #25D366; /* Warna khas WhatsApp */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.wa-img {
+    width: 20px; /* Sesuaikan ukuran ikon */
+    height: 20px;
+    object-fit: contain; /* Agar gambar tidak terdistorsi */
+}
+
+.button-container {
+    display: flex; /* Mengatur kedua tombol menjadi sejajar */
+    justify-content: center; /* Mengatur posisi di tengah */
+    align-items: center; /* Menyelaraskan tombol secara vertikal */
+    gap: 5px; /* Memberikan jarak antar tombol */
+    margin-top: 15px; /* Tambahkan margin untuk spasi di atas/bawah */
+}
+
+.review-item:hover {
+    transform: translateY(-10px); /* Efek naik saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+.review-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    margin-bottom: 15px;
+}
+
+.review-caption {
+    font-size: 14px;
+    color: #555;
+    padding: 0 10px;
+    font-style: italic;
+}
+
