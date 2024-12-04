@@ -30,7 +30,7 @@ body {
 }
 
 .header .logo img {
-    max-width: 180px;
+    max-width: 150px;
     height: auto;
 }
 
@@ -53,31 +53,43 @@ body {
 
 /* Banner Styles */
 .banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ccb7b7;
+    height: 500px; /* Default height for desktop */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #ccb7b7;
-    position: relative;
-    overflow: hidden;
-    max-width: 100%; /* Membatasi ukuran gambar agar tidak lebih besar dari kontainer */
-    height: auto; /* Menjaga rasio aspek gambar */
-    display: block; /* Menghilangkan jarak kosong di bawah gambar */
-    margin: 0 auto; 
+    justify-content: center;
+    background-image: url('banner3.jpg');
+    background-size: cover;
+    background-position: center;
+    
 }
+
+@media (max-width: 768px) {
+    .banner {
+      background-image: url('banner3.jpg');
+      height: 300px; /* Sesuaikan tinggi */
+    }
+  }
 
 .banner-image {
-    min-width: 800px;
-    height: auto;
-    object-fit: cover;
-    width: 19850px;
-}
-
-.banner-content {
-    display: flex;
     width: 100%;
     height: 100%;
-    position: relative;
-    transition: transform 0.5s ease-in-out;
+    object-fit: cover;
+}
+
+
+
+.banner-content {
+    position: absolute;
+    text-align: center;
+    color: white;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: auto;
 }
 
 /* Menu Styles */
@@ -175,7 +187,7 @@ body {
     display: flex; /* Mengatur kedua tombol menjadi sejajar */
     justify-content: center; /* Mengatur posisi di tengah */
     align-items: center; /* Menyelaraskan tombol secara vertikal */
-    gap: 5px; /* Memberikan jarak antar tombol */
+    gap: px; /* Memberikan jarak antar tombol */
     margin-top: 15px; /* Tambahkan margin untuk spasi di atas/bawah */
 }
 
