@@ -1,4 +1,4 @@
-/* General Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +12,13 @@ body {
 }
 
 .dashboard {
-    max-width: 100%; /* Use full width */
+    max-width: 100%;
     margin: 0 auto;
     background-color: #fff;
     color: black;
 }
 
-/* Header Styles */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -51,13 +51,32 @@ body {
     color: #ffd700;
 }
 
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 15px 20px;
+        height: auto; 
+    }
+
+    .nav {
+        flex-direction: column; 
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px; 
+    }
+}
+
 /* Banner Styles */
 .banner {
     position: relative;
     width: 100%;
     overflow: hidden;
     background-color: #ccb7b7;
-    height: 500px; /* Default height for desktop */
+    height: 500px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +89,7 @@ body {
 @media (max-width: 768px) {
     .banner {
       background-image: url('banner3.jpg');
-      height: 300px; /* Sesuaikan tinggi */
+      height: 300px; 
     }
   }
 
@@ -170,9 +189,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Jarak antara ikon dan teks */
+    gap: 10px; 
     padding: 12px 20px;
-    background-color: #25D366; /* Warna khas WhatsApp */
+    background-color: #25D366; 
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -184,11 +203,11 @@ body {
 }
 
 .button-container {
-    display: flex; /* Mengatur kedua tombol menjadi sejajar */
-    justify-content: center; /* Mengatur posisi di tengah */
-    align-items: center; /* Menyelaraskan tombol secara vertikal */
-    gap: px; /* Memberikan jarak antar tombol */
-    margin-top: 15px; /* Tambahkan margin untuk spasi di atas/bawah */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: px; 
+    margin-top: 15px; 
 }
 
 .order-btn:hover {
@@ -201,14 +220,14 @@ body {
 }
 
 .wa-img {
-    width: 20px; /* Sesuaikan ukuran ikon */
+    width: 20px; 
     height: 20px;
-    object-fit: contain; /* Agar gambar tidak terdistorsi */
+    object-fit: contain; 
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
-    /* Adjust header layout for smaller screens */
+  
     .header {
         flex-direction: column;
         text-align: center;
@@ -227,7 +246,7 @@ body {
         font-size: 16px;
     }
 
-    /* Adjust banner for smaller screen widths */
+   
     .banner {
         flex-direction: column;
         height: 350px;
@@ -237,7 +256,7 @@ body {
         height: 250px;
     }
 
-    /* Stack menu items for smaller screens */
+
     .menu-items {
         flex-direction: column;
         align-items: center;
@@ -245,13 +264,13 @@ body {
 
     .menu-item {
         width: 100%;
-        max-width: 300px; /* Increase size for readability */
+        max-width: 300px; 
         margin-bottom: 20px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    /* Header styles for very small screens */
+
     .header {
         padding: 10px 20px;
     }
@@ -273,12 +292,12 @@ body {
         max-width: 320px;
     }
 
-    /* Make menu items fit the screen */
+  
     .item-details h3 {
         font-size: 16px;
     }
 
-    /* Adjust banner image height */
+   
     .banner {
         height: 300px;
     }
@@ -290,7 +309,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-    /* Header and menu styles for mobile devices */
+  
     .header {
         padding: 5px 10px;
     }
@@ -307,18 +326,18 @@ body {
         font-size: 12px;
     }
 
-    /* Adjust menu items to fit screen */
+  
     .menu-item {
         width: 100%;
         max-width: 300px;
     }
 
-    /* Adjust order buttons */
+
     .order-btn {
         width: 100%;
     }
     
-    /* Banner image height for mobile devices */
+   
     .banner {
         height: 250px;
     }
@@ -332,7 +351,7 @@ body {
 
 @media (max-width: 768px) {
     img {
-        width: 100%; /* Menyesuaikan dengan layar kecil */
+        width: 100%; 
     }
 }
 
