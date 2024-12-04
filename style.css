@@ -29,6 +29,16 @@ body {
     height: 80px;
 }
 
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Susunan vertikal */
+        align-items: flex-start; /* Elemen rata kiri */
+        padding: 15px 20px; /* Padding lebih kecil */
+        height: auto; /* Tinggi menyesuaikan konten */
+    }
+}
+
+
 .header .logo img {
     max-width: 150px;
     height: auto;
