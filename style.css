@@ -129,7 +129,7 @@ body {
 .menu-title {
     text-align: center;
     margin: 20px 0;
-    color: #a17e7e;
+    color: black;
 }
 
 .menu-items {
@@ -169,13 +169,30 @@ body {
 }
 
 .item-details h3 {
-    font-size: 18px;
+    font-size: 24px;  /* Besarkan ukuran font */
+    font-weight: 600; /* Font bold agar lebih tegas */
+    color: #333;      /* Warna teks lebih gelap untuk kontras yang lebih baik */
     margin: 0;
+    line-height: 1.4;
 }
 
-.price {
-    font-weight: bold;
-    color: #333;
+.item-details p {
+    font-size: 18px;   /* Besarkan ukuran font paragraf */
+    color: #666;       /* Warna yang lebih lembut untuk deskripsi */
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.item-details {
+    text-align: center;
+    padding: 10px;
+}
+
+.item-details .price {
+    font-size: 20px;   /* Besarkan ukuran font harga */
+    font-weight: 700;  /* Bold untuk harga */
+    color: #e74c3c;    /* Warna merah cerah untuk harga */
+    margin-top: 10px;
 }
 
 /* Order Button */
