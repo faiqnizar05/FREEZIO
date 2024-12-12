@@ -451,8 +451,12 @@ body {
 
 .email, .message {
     display: inline-block;
-    width: 48%; /
+    width: 48%;
     vertical-align: top;
+}
+
+.message {
+    margin-left: 2%;
 }
 
 .email {
@@ -460,3 +464,23 @@ body {
 }
 
 /* comtact us end */
+
+/* about_us */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-us-header {
+    background-color: #d49797;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.about-us-description {
+    background-color: #80c7d5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
