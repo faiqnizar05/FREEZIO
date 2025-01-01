@@ -6,15 +6,21 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: cursive;
+    /* font-family: 'Trebuchet MS', sans-serif; */
+    /* background-color: #f4f4f4; */
+    background-image: url(background.jpg);
     color: #333;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .dashboard {
     max-width: 100%;
     margin: 0 auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     color: black;
 }
 
@@ -23,11 +29,46 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    /* background-color: rgb(255, 255, 255); */
     padding: 15px 40px;
-    color: white;
+    color: rgb(23, 23, 23);
     height: 80px;
 }
+
+/* batas */
+.hero {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 80px;
+}
+
+.kiri {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: -300px;
+}
+
+.kiri h2 {
+    font-size: 3rem; 
+  }
+  
+  .kiri p {
+    font-size: 1.5rem; 
+  }
+  
+.kanan {
+    flex: 1;
+    margin-left: 20px; 
+    margin-right: -100px;
+}
+.hero img {
+    max-width: 100%;
+}
+
+
+/* batas akhir */
+
 
 @media (max-width: 768px) {
     .header {
@@ -50,7 +91,7 @@ body {
 }
 
 .nav-item {
-    color: white;
+    color: rgb(21, 19, 19);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -85,7 +126,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #ccb7b7;
+    /* background-color: #ccb7b7; */
     height: 500px; 
     display: flex;
     align-items: center;
@@ -145,7 +186,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
@@ -462,6 +503,7 @@ body {
 .email {
     margin-right: 2%;
 }
+
 
 /* comtact us end */
 
