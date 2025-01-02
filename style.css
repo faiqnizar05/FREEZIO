@@ -9,7 +9,7 @@ body {
     font-family: cursive;
     /* font-family: 'Trebuchet MS', sans-serif; */
     /* background-color: #f4f4f4; */
-    background-image: url(background.jpg);
+    background-image: url(images/BACKGROUND\ BLUE.jpg);
     color: #333;
     max-width: 100%;
     background-size: cover;
@@ -99,7 +99,7 @@ body {
 }
 
 .nav-item:hover {
-    color: #ffd700;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -429,7 +429,7 @@ body {
 .form_block {
     display: flex; 
     justify-content: space-between; 
-    gap: 20px; 
+    gap: 10px; 
 }
 .input_cont, .contact_us {
     display: inline-block;
@@ -439,21 +439,22 @@ body {
 }
 
 .input_cont {
-    width: 48%;
-    font-family: Arial, sans-serif;
+    width: 70%;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd90;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f96f;
 }
 
 .contact_us {
     width: 48%; 
-    font-family: Arial, sans-serif;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
+}
+.cont1 {
+    font-size: 25px;
+}
+.cont2 {
+    font-size: 35px;
 }
 
 .input_cont label {
@@ -470,7 +471,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    font-family: Arial, sans-serif;
 }
 
 .cont_submit {
@@ -525,4 +525,78 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 50%;
+}
+
+/* footer */
+/* Styling for the footer */
+.ini_footer {
+    background-color: #358bea;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.isi_footer {
+    width: 45%;
+}
+
+.isi_footer h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.isi_footer p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.isi_footer a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.isi_footer a:hover {
+    color: #007bff;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Styling for the copyright section */
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Make the footer responsive */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .isi_footer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-icon {
+        width: 18px;
+        height: 18px;
+    }
 }
