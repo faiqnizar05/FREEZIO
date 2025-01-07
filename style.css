@@ -6,15 +6,21 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: cursive;
+    /* font-family: 'Trebuchet MS', sans-serif; */
+    /* background-color: #f4f4f4; */
+    background-image: url(images/BACKGROUND\ BLUE.jpg);
     color: #333;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .dashboard {
     max-width: 100%;
     margin: 0 auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     color: black;
 }
 
@@ -23,11 +29,46 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    /* background-color: rgb(255, 255, 255); */
     padding: 15px 40px;
-    color: white;
+    color: rgb(23, 23, 23);
     height: 80px;
 }
+
+/* batas */
+.hero {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 80px;
+}
+
+.kiri {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: -300px;
+}
+
+.kiri h2 {
+    font-size: 3rem; 
+  }
+  
+  .kiri p {
+    font-size: 1.5rem; 
+  }
+  
+.kanan {
+    flex: 1;
+    margin-left: 20px; 
+    margin-right: -100px;
+}
+.hero img {
+    max-width: 100%;
+}
+
+
+/* batas akhir */
+
 
 @media (max-width: 768px) {
     .header {
@@ -50,7 +91,7 @@ body {
 }
 
 .nav-item {
-    color: white;
+    color: rgb(21, 19, 19);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -58,7 +99,7 @@ body {
 }
 
 .nav-item:hover {
-    color: #ffd700;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -85,7 +126,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #ccb7b7;
+    /* background-color: #ccb7b7; */
     height: 500px; 
     display: flex;
     align-items: center;
@@ -145,7 +186,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
@@ -388,7 +429,7 @@ body {
 .form_block {
     display: flex; 
     justify-content: space-between; 
-    gap: 20px; 
+    gap: 10px; 
 }
 .input_cont, .contact_us {
     display: inline-block;
@@ -398,21 +439,22 @@ body {
 }
 
 .input_cont {
-    width: 48%;
-    font-family: Arial, sans-serif;
+    width: 70%;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd90;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f96f;
 }
 
 .contact_us {
     width: 48%; 
-    font-family: Arial, sans-serif;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
+}
+.cont1 {
+    font-size: 25px;
+}
+.cont2 {
+    font-size: 35px;
 }
 
 .input_cont label {
@@ -429,7 +471,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    font-family: Arial, sans-serif;
 }
 
 .cont_submit {
@@ -463,6 +504,7 @@ body {
     margin-right: 2%;
 }
 
+
 /* comtact us end */
 
 /* about_us */
@@ -483,4 +525,78 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 50%;
+}
+
+/* footer */
+/* Styling for the footer */
+.ini_footer {
+    background-color: #358bea;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.isi_footer {
+    width: 45%;
+}
+
+.isi_footer h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.isi_footer p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.isi_footer a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.isi_footer a:hover {
+    color: #007bff;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Styling for the copyright section */
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Make the footer responsive */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .isi_footer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-icon {
+        width: 18px;
+        height: 18px;
+    }
 }
