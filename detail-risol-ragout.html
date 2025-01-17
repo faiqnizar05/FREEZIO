@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risol Ragout - FREEZIO</title>
+    <link rel="stylesheet" href="styles_detail.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/LOGO FREEZIO.png" alt="Logo" style="max-width: 100px; height: auto;">
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-item" style="margin-right: 15px;">Home</a>
+            <a href="#" class="nav-item" style="margin-right: 15px;">About Us</a>
+            <a href="#" class="nav-item" style="margin-right: 15px;">Article</a>
+            <a href="#" class="nav-item">Contact</a>
+        </nav>
+    </div>
+
+    <section class="review-gallery">
+        <h2 class="section-title">Risol Ragout</h2>
+        <div class="review-images">
+            <div class="review-item" onclick="selectFlavor('original')">
+                <img src="risol-ragout/asli.jpg" alt="Original Risol Ragout" class="review-image">
+                <div class="flavor-label">Original</div>
+            </div>
+            <div class="review-item" onclick="selectFlavor('spicy')">
+                <img src="risol-ragout/pedas.jpg" alt="Spicy Risol Ragout" class="review-image">
+                <div class="flavor-label">Spicy</div>
+            </div>
+            <div class="review-item" onclick="selectFlavor('pack')">
+                <img src="risol-ragout/pack.jpg" alt="Risol Ragout Pack" class="review-image">
+                <div class="flavor-label">Pack</div>
+            </div>
+        </div>
+
+        <div class="product-details" id="orderForm">
+            <div class="selected-flavor" id="selectedFlavorText">Selected: Original</div>
+            <h3>Select Your Package</h3>
+            <div class="price-options">
+                <div class="option" id="singleOption">
+                    <label>
+                        <input type="radio" name="package" value="single" checked 
+                               onclick="enableSingleQuantity()">
+                        Single (Rp. 2.500/pcs) Minimal 3 Pcs
+                    </label>
+                    <input type="number" id="single-qty" class="quantity-input" value="3" min="3"
+                           oninput="updateTotal()">
+                </div>
+                <div class="option" id="packOption">
+                    <label>
+                        <input type="radio" name="package" value="pack"
+                               onclick="enablePackQuantity()">
+                        Pack of 10 (Rp. 25.000)
+                    </label>
+                    <input type="number" id="pack-qty" class="quantity-input" value="0" min="1" disabled
+                           oninput="updateTotal()">
+                </div>
+            </div>
+
+            <div class="total-price" id="total">Total: Rp. 7.500</div>
+
+            <a href="#" class="order-btn" id="wa-link" onclick="sendWhatsAppMessage()">
+                <img src="images/wa-putih.png" alt="WhatsApp" class="wa-img">
+                Order via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <script>
+        let selectedFlavor = 'original';
+
+        function enableSingleQuantity() {
+            document.getElementById('single-qty').disabled = false;
+            document.getElementById('pack-qty').disabled = true;
+            document.getElementById('pack-qty').value = 0;
+            document.getElementById('packOption').classList.add('disabled');
+            document.getElementById('singleOption').classList.remove('disabled');
+            document.getElementById('single-qty').value = 3;
+            updateTotal();
+        }
+
+        function enablePackQuantity() {
+            document.getElementById('pack-qty').disabled = false;
+            document.getElementById('single-qty').disabled = true;
+            document.getElementById('single-qty').value = 0;
+            document.getElementById('singleOption').classList.add('disabled');
+            document.getElementById('packOption').classList.remove('disabled');
+            document.getElementById('pack-qty').value = 1;
+            updateTotal();
+        }
+
+        function selectFlavor(flavor) {
+            selectedFlavor = flavor;
+            
+            document.querySelectorAll('.review-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            event.currentTarget.classList.add('selected');
+            
+            document.getElementById('orderForm').style.display = 'block';
+            
+            const flavorText = flavor.charAt(0).toUpperCase() + flavor.slice(1);
+            document.getElementById('selectedFlavorText').textContent = `Selected: ${flavorText}`;
+            
+            if (flavor === 'pack') {
+                document.querySelector('input[value="pack"]').checked = true;
+                enablePackQuantity();
+            } else {
+                document.querySelector('input[value="single"]').checked = true;
+                enableSingleQuantity();
+            }
+        }
+
+        function updateTotal() {
+            const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
+            const packQty = parseInt(document.getElementById('pack-qty').value) || 0;
+            const total = (singleQty * 2500) + (packQty * 25000);
+            document.getElementById('total').textContent = `Total: Rp. ${total.toLocaleString()}`;
+        }
+
+        function sendWhatsAppMessage() {
+            const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
+            const packQty = parseInt(document.getElementById('pack-qty').value) || 0;
+            const total = (singleQty * 2500) + (packQty * 25000);
+            
+            let message = `Halo, saya ingin memesan Risol Ragout ${selectedFlavor.toUpperCase()}:%0A`;
+            if (singleQty > 0) {
+                message += `- ${singleQty} pcs (Single)%0A`;
+            }
+            if (packQty > 0) {
+                message += `- ${packQty} pack(s) of 10%0A`;
+            }
+            message += `Total: Rp. ${total.toLocaleString()}`;
+            
+            window.location.href = `https://wa.me/6285692476174?text=${message}`;
+        }
+
+        // Initialize with single option enabled
+        enableSingleQuantity();
+    </script>
+</body>
+</html>

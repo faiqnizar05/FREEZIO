@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekwan - FREEZIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: cursive;
+            background-image: url(images/BACKGROUND\ BLUE.jpg);
+            color: #333;
+            max-width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: rgb(23, 23, 23);
+            height: 80px;
+        }
+
+        .header .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            color: rgb(21, 19, 19);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #ffffff;
+        }
+
+        .product-details {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .ingredients {
+            margin-bottom: 2rem;
+        }
+
+        .ingredients h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 18px;
+        }
+
+        .ingredients ul {
+            list-style-type: none;
+        }
+
+        .ingredients li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .price-options {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+        }
+
+        .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .option.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 0.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .total-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2563eb;
+            text-align: right;
+            margin: 1rem 0;
+        }
+
+        .order-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #128C7E;
+        }
+
+        .wa-img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding: 15px 20px;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .product-details {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .option {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .quantity-input {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/LOGO FREEZIO.png" alt="Logo" style="max-width: 100px; height: auto;">
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-item" style="margin-right: 15px;">Home</a>
+            <a href="#" class="nav-item" style="margin-right: 15px;">About Us</a>
+            <a href="#" class="nav-item" style="margin-right: 15px;">Article</a>
+            <a href="#" class="nav-item">Contact</a>
+        </nav>
+    </div>
+
+    <div class="product-details">
+        <h2 class="section-title">Tekwan</h2>
+        
+        <div class="description">
+            <p>Nikmati kelezatan tekwan kami yang dibuat dengan bahan-bahan berkualitas tinggi. Pentol tekwan dari ikan kakap yang lembut dipadukan dengan bumbu siap saji yang menggugah selera.</p>
+        </div>
+
+        <div class="ingredients">
+            <h3>Komposisi:</h3>
+            <ul>
+                <li>• Pentol tekwan dari ikan kakap</li>
+                <li>• Bumbu siap saji</li>
+            </ul>
+        </div>
+
+        <div class="price-options">
+            <div class="option" id="singleOption">
+                <label>
+                    <input type="checkbox" name="package" value="single" 
+                           onchange="toggleOption('single')">
+                    Satuan (Rp. 15.000/pcs) Min. 1 Pcs
+                </label>
+                <input type="number" id="single-qty" class="quantity-input" value="0" min="1" disabled
+                       oninput="updateTotal()">
+            </div>
+        </div>
+
+        <div class="total-price" id="total">Total: Rp. 0</div>
+
+        <a href="#" class="order-btn" id="wa-link" onclick="sendWhatsAppMessage()">
+            <img src="images/wa-putih.png" alt="WhatsApp" class="wa-img">
+            Order via WhatsApp
+        </a>
+    </div>
+
+    <script>
+        function toggleOption(type) {
+            const singleQty = document.getElementById('single-qty');
+            const singleCheck = document.querySelector("input[value='single']");
+
+            if (type === 'single') {
+                if (singleCheck.checked) {
+                    if (singleQty.value < 1) {
+                        singleQty.value = 1;
+                    }
+                    singleQty.disabled = false;
+                } else {
+                    singleQty.value = 0;
+                    singleQty.disabled = true;
+                }
+            }
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
+
+            let total = 0;
+
+            // Calculate total based on current selections
+            if (singleQty >= 1) {
+                total += singleQty * 15000;
+            }
+
+            document.getElementById('total').textContent = `Total: Rp. ${total.toLocaleString()}`;
+        }
+
+        function sendWhatsAppMessage() {
+            const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
+            const total = singleQty >= 1 ? singleQty * 15000 : 0;
+
+            if (total === 0) {
+                alert('Silakan pilih jumlah pesanan terlebih dahulu');
+                return;
+            }
+
+            let message = "Halo, saya ingin memesan Tekwan:%0A";
+            if (singleQty >= 1) {
+                message += `- ${singleQty} pcs (Satuan)%0A`;
+            }
+            message += `Total: Rp. ${total.toLocaleString()}`;
+
+            window.location.href = `https://wa.me/6285692476174?text=${message}`;
+        }
+    </script>
+</body>
+</html>

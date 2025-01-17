@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    background-image: url(images/BACKGROUND\ BLUE.jpg);
+    color: #333;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+.dashboard {
+    max-width: 100%;
+    margin: 0 auto;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    color: rgb(23, 23, 23);
+    height: 80px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+.kiri {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: -300px;
+}
+
+.kiri h2 {
+    font-size: 3rem;
+}
+
+.kiri p {
+    font-size: 1.5rem;
+}
+
+.kanan {
+    flex: 1;
+    margin-left: 20px;
+    margin-right: -100px;
+}
+
+.hero img {
+    max-width: 100%;
+}
+
+.header .logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    color: rgb(21, 19, 19);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+}
+
+/* Menu Styles */
+.menu {
+    padding: 40px 20px;
+}
+
+.menu-title {
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.menu-item {
+    width: 300px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .image-placeholder img {
+    transform: scale(1.05);
+}
+
+.item-details h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.item-details p {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.item-details .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 15px 0;
+}
+
+/* Improved Footer */
+.ini_footer {
+    background-color: #358bea;
+    padding: 50px 0 30px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.isi_footer {
+    width: 45%;
+    padding: 0 20px;
+}
+
+.isi_footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.isi_footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.isi_footer p {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.isi_footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.isi_footer a:hover {
+    color: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.isi_footer a:hover .footer-icon {
+    transform: scale(1.1);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .isi_footer {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .isi_footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .isi_footer p {
+        justify-content: center;
+    }
+
+    .menu-item {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .kiri {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .kanan {
+        margin: 30px 0;
+    }
+}
+
+/* Contact Form Styles */
+.form_block {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.input_cont {
+    width: 60%;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact_us {
+    width: 40%;
+    padding: 30px;
+}
+
+.input_cont label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+.input_cont input,
+.input_cont textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input_cont input:focus,
+.input_cont textarea:focus {
+    border-color: #358bea;
+    outline: none;
+}
+
+.cont_submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cont_submit:hover {
+    background-color: #218838;
+}
+
+
+
+
+/* batas akhir */
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Susunan vertikal */
+        align-items: flex-start; /* Elemen rata kiri */
+        padding: 15px 20px; /* Padding lebih kecil */
+        height: auto; /* Tinggi menyesuaikan konten */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 15px 20px;
+        height: auto; 
+    }
+
+    .nav {
+        flex-direction: column; 
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 16px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .banner {
+      background-image: url('banner3.jpg');
+      height: 300px; 
+    }
+  }
+
+
+
+/* Menu Styles */
+.menu {
+    padding: 20px;
+}
+
+.menu-title {
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu-item {
+    width: 250px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details h3 {
+    font-size: 24px;  /* Besarkan ukuran font */
+    font-weight: 600; /* Font bold agar lebih tegas */
+    color: #333;      /* Warna teks lebih gelap untuk kontras yang lebih baik */
+    margin: 0;
+    line-height: 1.4;
+}
+
+.item-details p {
+    font-size: 18px;   /* Besarkan ukuran font paragraf */
+    color: #666;       /* Warna yang lebih lembut untuk deskripsi */
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.item-details {
+    text-align: center;
+    padding: 10px;
+}
+
+.item-details .price {
+    font-size: 20px;   /* Besarkan ukuran font harga */
+    font-weight: 700;  /* Bold untuk harga */
+    color: #e74c3c;    /* Warna merah cerah untuk harga */
+    margin-top: 10px;
+}
+
+/* Order Button */
+.order-btn {
+    padding: 12px 30px;
+    background-color: #347fff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.order-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    padding: 12px 20px;
+    background-color: #25D366; 
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: px; 
+    margin-top: 15px; 
+}
+
+.order-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.order-btn:active {
+    transform: scale(0.98);
+}
+
+.wa-img {
+    width: 20px; 
+    height: 20px;
+    object-fit: contain; 
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-item {
+        font-size: 16px;
+    }
+
+   
+    .banner {
+        flex-direction: column;
+        height: 350px;
+    }
+
+    .banner-image {
+        height: 250px;
+    }
+
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 100%;
+        max-width: 300px; 
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .menu-item {
+        width: 100%;
+        max-width: 320px;
+    }
+
+  
+    .item-details h3 {
+        font-size: 16px;
+    }
+
+   
+    .banner {
+        height: 300px;
+    }
+
+    .banner-image {
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  
+    .header {
+        padding: 5px 10px;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .nav-item {
+        font-size: 12px;
+    }
+
+  
+    .menu-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    .order-btn {
+        width: 100%;
+    }
+    
+   
+    .banner {
+        height: 250px;
+    }
+
+    .banner-image {
+        height: 100%;
+
+        
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 100%; 
+    }
+}
+
+
+/* contact us */
+
+
+
+
+/* comtact us end */
+
+
+
+/* Make the footer responsive */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .isi_footer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
