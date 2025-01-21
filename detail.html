@@ -3,66 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Makanan</title>
+    <title>Risol Ragout - FREEZIO</title>
     <link rel="stylesheet" href="styles_detail.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="images/LOGO FREEZIO.png" alt="Logo" style="max-width: 100px; height: auto;">
-        </div>
+    <header class="header">
+        <div class="logo"><img src="images/logofreezio.png" alt=""></div>
+        <div class="brand"></div>
         <nav class="nav">
             <a href="index.html" class="nav-item" style="margin-right: 15px;">Home</a>
             <a href="aboutus.html" class="nav-item" style="margin-right: 15px;">About Us</a>
             <a href="article.html" class="nav-item" style="margin-right: 15px;">Article</a>
             <a href="review.html" class="nav-item" style="margin-right: 15px;">Review</a>
         </nav>
-    </div>
+    </header>
 
     <section class="review-gallery">
-        <h2 class="section-title">Risol Mayonaise</h2>
+        <h2 class="section-title">Risol Ragout</h2>
         <div class="review-images">
             <div class="review-item" onclick="selectFlavor('original')">
-                <img src="risol-mayonaise/asli.jpg" alt="Original Risol Mayonaise" class="review-image">
+                <img src="risol-ragout/asli.jpg" alt="Original Risol Ragout" class="review-image">
                 <div class="flavor-label">Original</div>
             </div>
-            
             <div class="review-item" onclick="selectFlavor('spicy')">
-                <img src="risol-mayonaise/pedas.jpg" alt="Spicy Risol Mayonaise" class="review-image">
+                <img src="risol-ragout/pedas.jpg" alt="Spicy Risol Ragout" class="review-image">
                 <div class="flavor-label">Spicy</div>
             </div>
             <div class="review-item" onclick="selectFlavor('pack')">
-                <img src="risol-mayonaise/pack.jpg" alt="Pack Risol Mayonaise" class="review-image">
-                <div class="flavor-label">Pack</div>
-               
+                <img src="risol-ragout/pack.jpg" alt="Risol Ragout Pack" class="review-image">
+                <div class="flavor-label">Mixed Pack</div>
             </div>
-            <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
         </div>
+
         <div class="product-details" id="orderForm">
             <div class="selected-flavor" id="selectedFlavorText">Selected: Original</div>
             <h3>Select Your Package</h3>
             <div class="price-options">
-                <div class="option" id="singleOption">
+                <div class="option">
                     <label>
                         <input type="radio" name="package" value="single" checked 
-                               onclick="enableSingleQuantity()">
-                        Single (Rp. 3.000/pcs) Minimal 3 Pcs
+                               onclick="document.getElementById('single-qty').disabled = false;
+                                        document.getElementById('pack-qty').disabled = true;
+                                        document.getElementById('pack-qty').value = 0;
+                                        updateTotal();">
+                        Single (Rp. 2.500/pcs) Minimal 3 Pcs
                     </label>
                     <input type="number" id="single-qty" class="quantity-input" value="3" min="3"
                            oninput="updateTotal()">
                 </div>
-                <div class="option" id="packOption">
+                <div class="option">
                     <label>
                         <input type="radio" name="package" value="pack"
-                               onclick="enablePackQuantity()">
-                        Pack of 10 (Rp. 30.000)
+                               onclick="document.getElementById('pack-qty').disabled = false;
+                                        document.getElementById('single-qty').disabled = true;
+                                        document.getElementById('single-qty').value = 0;
+                                        updateTotal();">
+                        Pack of 10 (Rp. 25.000)
                     </label>
-                    <input type="number" id="pack-qty" class="quantity-input" value="0" min="1" disabled
+                    <input type="number" id="pack-qty" class="quantity-input" value="0" min="0" disabled
                            oninput="updateTotal()">
                 </div>
             </div>
 
-            <div class="total-price" id="total">Total: Rp. 9.000</div>
+            <div class="total-price" id="total">Total: Rp. 7.500</div>
 
             <a href="#" class="order-btn" id="wa-link" onclick="sendWhatsAppMessage()">
                 <img src="images/wa-putih.png" alt="WhatsApp" class="wa-img">
@@ -72,64 +75,45 @@
     </section>
 
     <script>
-        let selectedFlavor = 'original';
-
-        function enableSingleQuantity() {
-            document.getElementById('single-qty').disabled = false;
-            document.getElementById('pack-qty').disabled = true;
-            document.getElementById('pack-qty').value = 0;
-            document.getElementById('packOption').classList.add('disabled');
-            document.getElementById('singleOption').classList.remove('disabled');
-            document.getElementById('single-qty').value = 3;
-            updateTotal();
-        }
-
-        function enablePackQuantity() {
-            document.getElementById('pack-qty').disabled = false;
-            document.getElementById('single-qty').disabled = true;
-            document.getElementById('single-qty').value = 0;
-            document.getElementById('singleOption').classList.add('disabled');
-            document.getElementById('packOption').classList.remove('disabled');
-            document.getElementById('pack-qty').value = 1;
-            updateTotal();
-        }
+        let selectedFlavor = '';
 
         function selectFlavor(flavor) {
             selectedFlavor = flavor;
             
+            // Remove selected class from all items
             document.querySelectorAll('.review-item').forEach(item => {
                 item.classList.remove('selected');
             });
             
+            // Add selected class to clicked item
             event.currentTarget.classList.add('selected');
             
+            // Show order form
             document.getElementById('orderForm').style.display = 'block';
             
+            // Update selected flavor text
             const flavorText = flavor.charAt(0).toUpperCase() + flavor.slice(1);
             document.getElementById('selectedFlavorText').textContent = `Selected: ${flavorText}`;
             
-            if (flavor === 'pack') {
-                document.querySelector('input[value="pack"]').checked = true;
-                enablePackQuantity();
-            } else {
-                document.querySelector('input[value="single"]').checked = true;
-                enableSingleQuantity();
-            }
+            // Reset quantities and update total
+            document.getElementById('single-qty').value = 3;
+            document.getElementById('pack-qty').value = 0;
+            updateTotal();
         }
 
         function updateTotal() {
             const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
             const packQty = parseInt(document.getElementById('pack-qty').value) || 0;
-            const total = (singleQty * 3000) + (packQty * 30000);
+            const total = (singleQty * 2500) + (packQty * 25000);
             document.getElementById('total').textContent = `Total: Rp. ${total.toLocaleString()}`;
         }
 
         function sendWhatsAppMessage() {
             const singleQty = parseInt(document.getElementById('single-qty').value) || 0;
             const packQty = parseInt(document.getElementById('pack-qty').value) || 0;
-            const total = (singleQty * 3000) + (packQty * 30000);
+            const total = (singleQty * 2500) + (packQty * 25000);
             
-            let message = `Halo, saya ingin memesan Risol Mayonaise ${selectedFlavor.toUpperCase()}:%0A`;
+            let message = `Halo, saya ingin memesan Risol Ragout ${selectedFlavor.toUpperCase()}:%0A`;
             if (singleQty > 0) {
                 message += `- ${singleQty} pcs (Single)%0A`;
             }
@@ -140,9 +124,6 @@
             
             window.location.href = `https://wa.me/628889516559?text=${message}`;
         }
-
-        // Initialize with single option enabled
-        enableSingleQuantity();
     </script>
 </body>
 </html>

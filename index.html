@@ -15,8 +15,9 @@
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-item" style="margin-right: 15px;">Home</a>
-                <a href="#" class="nav-item" style="margin-right: 15px;">About</a>
-                <a href="#" class="nav-item">Contact</a>
+                <a href="aboutus.html" class="nav-item" style="margin-right: 15px;">About Us</a>
+                <a href="article.html" class="nav-item" style="margin-right: 15px;">Article</a>
+                <a href="review.html" class="nav-item" style="margin-right: 15px;">Review</a>
             </nav>
         </div>
         
@@ -50,7 +51,7 @@
                         <p class="price">1 pcs = Rp. 3.000 <br> 10 pcs = Rp. 30.000 </p>
                     </div>
                     <div class="button-container">
-                        <a href="risol_mayo.html" class="order-btn">Details</a>
+                        <a href="detail-risol-mayo.html" class="order-btn">Details</a>
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20memesan%20makanan%20frozen%20food%20dari%20Freezio" target="_blank">
                             <button class="order-btn1">
@@ -73,7 +74,7 @@
                         <p class="price">1 pcs = Rp. 2.500 <br> 10 pcs = Rp. 25.000</p>
                     </div>
                     <div class="button-container">
-                        <a href="ragout.html" class="order-btn">Details</a>
+                        <a href="detail-risol-ragout.html" class="order-btn">Details</a>
 
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
@@ -94,7 +95,7 @@
                         <p class="price">1 pcs = Rp. 2.500 <br> 10 pcs = Rp. 25.000</p>
                     </div>
                     <div class="button-container">
-                        <a href="pastel.html" class="order-btn">Details</a>
+                        <a href="detail-pastel.html" class="order-btn">Details</a>
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
                             <button class="order-btn1">
@@ -112,10 +113,12 @@
                     <div class="item-details">
                         <h3>Siomay</h3>
                         <p>Siomay ikan kakap dengan bumbu kacang</p>
+                
                         <p class="price">Rp 12.000</p>
+                        <br>
                     </div>
                     <div class="button-container">
-                        <a href="siomay.html" class="order-btn">Details</a>
+                        <a href="detail-siomay.html" class="order-btn">Details</a>
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
                             <button class="order-btn1">
@@ -136,7 +139,7 @@
                         <p class="price">Rp 15.000</p>
                     </div>
                     <div class="button-container">
-                        <a href="tekwan.html" class="order-btn">Details</a>
+                        <a href="detail-tekwan.html" class="order-btn">Details</a>
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
                             <button class="order-btn1">
@@ -154,10 +157,11 @@
                     <div class="item-details">
                         <h3>Sosis Solo</h3>
                         <p>ayam suwir kecap</p>
+                        <br>
                         <p class="price">1 pcs = Rp. 2.500 <br> 10 pcs = Rp. 25.000</p>
                     </div>
                     <div class="button-container">
-                        <a href="sosissolo.html" class="order-btn">Details</a>
+                        <a href="detail-sosis-solo.html" class="order-btn">Details</a>
                     
                         <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
                             <button class="order-btn1">
@@ -172,39 +176,63 @@
     </div>
 
     <!-- contact -->
-     <h2 class="menu-title">WANT TO GIVE US FEEDBACK?</h2>
+     <h2 class="menu-title">REVIEW AREA!</h2>
      <div class="form_block">
-    <div class="input_cont">
-        <div class="name">
-            <label for="name" class="cont_name">Name</label>
-            <input type="text" class="input_name" id="name" placeholder="Name">
+        <div class="input_cont">
+            <div class="name">
+                <label for="name" class="cont_name">Name</label>
+                <input type="text" class="input_name" id="name" placeholder="Name">
+            </div>
+        
+            <div class="description">
+                <label for="description" class="cont_description">Description</label>
+                <input type="text" class="input_description" id="description" placeholder="Description">
+            </div>
+        
+            <div class="photo">
+                <label for="photo" class="cont_photo">Photo</label>
+                <input type="file" class="input_photo" id="photo">
+            </div>
+        
+            <button type="button" class="cont_submit" onclick="addReview()">
+                Submit
+            </button>
         </div>
-
-        <div class="phone">
-            <label for="phone" class="cont_phone">Phone Number</label>
-            <input type="number" class="input_phone" id="phone" placeholder="+62 8xxxxxxxx">
-          </div>
-
-        <div class="email">
-            <label for="email" class="cont_email">Email</label>
-            <input type="email" class="input_email" id="email" placeholder="name@gmail.com">
-        </div>
-
-        <div class="message">
-            <label for="message" class="input_message">Messages</label>
-            <textarea class="input_message" id="message" rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="cont_submit">Submit</button>
+        
+        
         <script>
+            function addReview() {
+                var name = document.getElementById('name').value;
+                var description = document.getElementById('description').value;
+                var photoInput = document.getElementById('photo');
+                var photo = photoInput.files.length > 0 ? URL.createObjectURL(photoInput.files[0]) : null;
+        
+                if (name && description) {
+                    var review = {
+                        name: name,
+                        description: description,
+                        photo: photo
+                    };
+        
+                    var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+                    reviews.push(review);
+                    localStorage.setItem('reviews', JSON.stringify(reviews));
+        
+                    window.location.href = 'review.html'; // Ganti 'review.html' dengan URL halaman review Anda
+                } else {
+                    alert('Please fill in both name and description.');
+                }
+            }
         </script>
+        
+        
         
     </div>
 
     <!-- Contact Information -->
     <div class="contact_us">
-       <P class="cont1">Give us feedback in the form of suggestions and constructive criticism 
-        so that we can provide the best for Zio.</P>
+       <P class="cont1"><h2>Give us feedback in the form of suggestions and constructive criticism 
+        so that we can provide the best for Zio.</h2></P>
         <br><br>
         <p class="cont2">Thank You for Visiting Us</p>
        
@@ -223,7 +251,7 @@
             </p>
             <p>
                 <img src="images/wa1.png" alt="WhatsApp Icon" class="footer-icon">
-                <a href="https://wa.me/6285692476174?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
+                <a href="https://wa.me/628889516559?text=Halo%20saya%20ingin%20tanya%20tentang%20pesanan" target="_blank">
                     +62 888 951 6559
                 </a>
             </p>
@@ -244,14 +272,14 @@
             </p>
             <p>
                 <img src="images/tiktok (1).png" alt="Instagram Icon" class="footer-icon">
-                <a href="https://www.instagram.com/freezio.food" target="_blank">
+                <a href="https://www.tiktok.com/@freezio.food?_t=ZS-8tE6OMcKVZQ&_r=1" target="_blank">
                     freezio.food
                 </a>
             </p>
         </div>
     </div>
     <div class="copyright">
-        &copy; 2023 Restoran Anda. All Rights Reserved.
+        &copy; FREEZIO-TEKNIK INFORMATIKA 2024
     </div>
 </footer>
 
